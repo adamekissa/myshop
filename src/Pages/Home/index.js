@@ -26,7 +26,7 @@ function Home(){
                 </p>
             </div>
             <div className="grid3"><h1>GRID 3</h1> </div>
-            <div className="grid4"><h1>GRID 4</h1> </div>
+            {/* <div className="grid4"><h1>GRID 4</h1> </div> */}
         </div>
 )};
 export default Home;
