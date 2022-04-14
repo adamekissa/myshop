@@ -22,6 +22,7 @@ function addToKart(e){
 let textInput = React.createRef();
 
     return( 
+        
         <div className="grid-container">
             <div className="grid1">
                 <h1>GRID 1</h1> 
