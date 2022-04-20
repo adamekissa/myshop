@@ -1,14 +1,16 @@
 import "./Home.css";
 import React from "react";
 import { useState } from "react";
-
+// import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 function Home(){
-
     const storeItems = [{"id": 1, "name": "Shoe", "price": 79 }
     , {"id": 2, "name": "Jacket", "price": 200}, {"id": 3, "name": "Lakers Socks", "price": 44},
      {"id": 4, "name": "Gucci Pant", "price": 80}, {"id": 5, "name": "Sunglass", "price": 111 }]
-const [kart, setKart] = useState([]);
+    const [kart, setKart] = useState([]);
 
 // useEffect(() => {
 // }, [kart] );
@@ -19,7 +21,7 @@ function addToKart(e){
      textInput.current.value = "";
      console.log(kart);
 };
-let textInput = React.createRef();
+    let textInput = React.createRef();
 
     return( 
         
@@ -49,27 +51,22 @@ let textInput = React.createRef();
                 <h1>GRID 3</h1> 
 
                 
-            <h1>Hobbies Page</h1>
-            <div>
-                <h1>MY SHOPPING BASKET</h1>
-                <ul>
-                    {kart.map((item, index) => { console.log(item); 
-                        return(<li key={index}>{item}</li>) })};
-                </ul>
+            <p className="text-center mt-3">Home</p>
+            <Row className="mx-0">
+                <Button as={Col} variant="primary">Button #1</Button>
+                <Button as={Col} variant="secondary" className="mx-2">Button #2</Button>
+                <Button as={Col} variant="success">Button #3</Button>
+            </Row>
+            <div className="card" style={{width: "18rem"}}>
+                <img src="..." className="card-img-top" alt="..."/>
+            <div className="card-body">
+                <h5 className="card-title">Card title</h5>
+                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" className="btn btn-primary">Go somewhere</a>
             </div>
-            <h1>STORE ITEMS</h1>
-            <input ref={textInput}></input>
-            <button>Add</button>
-            <ul >
-                    {storeItems.map((item, index)=>{ return(
-                    <li  key={index} >
-                        <div>
-                            <p id={item.name} onClick={addToKart} >{item.name}</p>
-                            <p>{item.price}</p>
-                        </div>
-                    </li>)})};
-            </ul>
+</div>
             </div>
+
         </div>
 )};
 export default Home;
